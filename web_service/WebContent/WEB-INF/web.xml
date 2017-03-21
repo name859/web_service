@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>web_service</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <servlet>
+    <servlet-name>userController</servlet-name>
+    <servlet-class>com.name859.user.UserController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>userController</servlet-name>
+    <url-pattern>/user.do</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>loginController</servlet-name>
+    <servlet-class>com.name859.login.LoginController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>loginController</servlet-name>
+    <url-pattern>/login.do</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>boardController</servlet-name>
+    <servlet-class>com.name859.board.controller.BoardController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>boardController</servlet-name>
+    <url-pattern>/board.do</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>boardFileController</servlet-name>
+    <servlet-class>com.name859.board.controller.BoardFileController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>boardFileController</servlet-name>
+    <url-pattern>/boardFile.do</url-pattern>
+  </servlet-mapping>
+  
+  <filter>
+    <filter-name>sessionCheck</filter-name>
+    <filter-class>com.name859.filter.SessionCheck</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>sessionCheck</filter-name>
+    <servlet-name>boardController</servlet-name>
+    <servlet-name>boardFileController</servlet-name>
+  </filter-mapping>
+</web-app>
